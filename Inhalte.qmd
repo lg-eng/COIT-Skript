@@ -1,0 +1,26 @@
+# Übersicht  
+
+## **Betriebssysteme und Netzwerktechnologien**
+- **Installation und Konfiguration:**
+  - **Installation:** Betriebssysteme für Client- und Server-Systeme (Windows/Linux).
+  - **Konfiguration:** Netzwerkeinstellungen, Benutzerverwaltung, Sicherheitsdienste.
+  - **Wartung:** Regelmäßige Updates, Backup-Strategien, Fehlerbehebung.
+
+## **Web- und Netzwerkprogrammierung**
+- **Webentwicklung:**
+  - **HTML:** Erstellung und Strukturierung von Webseiten.
+  - **CSS:** Styling und Layout-Gestaltung von Webseiten.
+  - **JavaScript:** Dynamische Inhalte und Interaktionen auf Webseiten.
+  
+- **Client-Server-Technologien:**
+  - **Client-Seite:** Einsatz von JavaScript zur Erstellung interaktiver Webseiten.
+  - **Server-Seite:** Grundlagen der Client-Server-Architektur und Kommunikation.
+
+## **Programmierung**
+- **Grundlagen und Datenstrukturen:**
+  - **Datenstrukturen:** Arrays, Strukturen, Pointer.
+  - **Dateiverwaltung:** Speicherung und Verwaltung von Datenstrukturen in Text- und Binärdateien.
+  
+- **Hardwarenahe Programmierung:**
+  - **Mikrocontrollerprogrammierung:** Programmierung von Mikrocontrollern mit C.
+  - **Hardwaresteuerung:** Ansteuerung und Integration von Peripheriegeräten wie Sensoren, Motoren.

@@ -1,0 +1,57 @@
+project:
+  type: book
+
+license: "CC BY"
+tbl-cap-location: bottom
+
+lang: de
+book:
+    title: "COIT-Skript"
+    author: "Leopold Götsch"
+    date: today
+    downloads: [pdf, docx]
+    repo-url: "https://github.com/lg-eng/COIT-Skript"
+    cookie-consent:
+      type: express
+    chapters:
+    - index.qmd
+    - inhalte.qmd
+    #- Logik/KombinatorischeLogik/01.05_BoolscheAlgebra.qmd
+    #- GET/KnotenSpannungsAnalyse.qmd
+
+
+bibliography: references.bib
+csl: diabetologia.csl
+
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-expand: 4
+    theme: cosmo
+    default-image-extension: svg
+    echo: true
+
+  # pdf:
+  #   documentclass: scrreprt
+  #   default-image-extension: pdf
+  #   fig-pos: "H"
+  #   echo: false
+
+  docx:
+    toc: true
+    number-sections: true
+    default-image-extension: svg
+    echo: false
+
+downloads: [pdf,docx]
+sidebar:
+    pinned: true
+    
+execute:
+#    echo: false
+    output: true
+    
+ 
+
+
