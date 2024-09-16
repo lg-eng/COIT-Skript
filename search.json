@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "COIT-Skript",
+    "section": "",
+    "text": "Willkommen zum Skript\nIn Arbeit!!",
+    "crumbs": [
+      "Willkommen zum Skript"
+    ]
+  },
+  {
+    "objectID": "index.html#verbessern",
+    "href": "index.html#verbessern",
+    "title": "COIT-Skript",
+    "section": "Verbessern",
+    "text": "Verbessern\nIch freue mich über alle Fehlerkorrekturen und Verbesserungsvorschläge die mich erreichen. Am einfachsten ist dies via Mail oder über GitHub.",
+    "crumbs": [
+      "Willkommen zum Skript"
+    ]
+  },
+  {
+    "objectID": "index.html#mitwirken",
+    "href": "index.html#mitwirken",
+    "title": "COIT-Skript",
+    "section": "Mitwirken",
+    "text": "Mitwirken\nWer am Skriptum mitarbeiten möchte, kann mich gerne kontaktieren. Meine Kontaktdaten sind auf der Homepage der HTL-Anichstrasse zu finden.\nViel Vergnügen mit HWE und dem interaktiven Quarto Book!",
+    "crumbs": [
+      "Willkommen zum Skript"
+    ]
+  },
+  {
+    "objectID": "inhalte.html",
+    "href": "inhalte.html",
+    "title": "1  Übersicht",
+    "section": "",
+    "text": "1.1 Betriebssysteme und Netzwerktechnologien",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Übersicht</span>"
+    ]
+  },
+  {
+    "objectID": "inhalte.html#betriebssysteme-und-netzwerktechnologien",
+    "href": "inhalte.html#betriebssysteme-und-netzwerktechnologien",
+    "title": "1  Übersicht",
+    "section": "",
+    "text": "Installation und Konfiguration:\n\nInstallation: Betriebssysteme für Client- und Server-Systeme (Windows/Linux).\nKonfiguration: Netzwerkeinstellungen, Benutzerverwaltung, Sicherheitsdienste.\nWartung: Regelmäßige Updates, Backup-Strategien, Fehlerbehebung.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Übersicht</span>"
+    ]
+  },
+  {
+    "objectID": "inhalte.html#web--und-netzwerkprogrammierung",
+    "href": "inhalte.html#web--und-netzwerkprogrammierung",
+    "title": "1  Übersicht",
+    "section": "1.2 Web- und Netzwerkprogrammierung",
+    "text": "1.2 Web- und Netzwerkprogrammierung\n\nWebentwicklung:\n\nHTML: Erstellung und Strukturierung von Webseiten.\nCSS: Styling und Layout-Gestaltung von Webseiten.\nJavaScript: Dynamische Inhalte und Interaktionen auf Webseiten.\n\nClient-Server-Technologien:\n\nClient-Seite: Einsatz von JavaScript zur Erstellung interaktiver Webseiten.\nServer-Seite: Grundlagen der Client-Server-Architektur und Kommunikation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Übersicht</span>"
+    ]
+  },
+  {
+    "objectID": "inhalte.html#programmierung",
+    "href": "inhalte.html#programmierung",
+    "title": "1  Übersicht",
+    "section": "1.3 Programmierung",
+    "text": "1.3 Programmierung\n\nGrundlagen und Datenstrukturen:\n\nDatenstrukturen: Arrays, Strukturen, Pointer.\nDateiverwaltung: Speicherung und Verwaltung von Datenstrukturen in Text- und Binärdateien.\n\nHardwarenahe Programmierung:\n\nMikrocontrollerprogrammierung: Programmierung von Mikrocontrollern mit C.\nHardwaresteuerung: Ansteuerung und Integration von Peripheriegeräten wie Sensoren, Motoren.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Übersicht</span>"
+    ]
+  }
+]
