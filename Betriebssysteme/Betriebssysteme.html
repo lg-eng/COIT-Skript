@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>COIT-Skript - 2&nbsp; Betriebssysteme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../inhalte.html" rel="prev">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"de"
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Betriebssysteme/Betriebssysteme.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Betriebssysteme</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">COIT-Skript</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/lg-eng/COIT-Skript" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../COIT-Skript.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../COIT-Skript.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Willkommen zum Skript</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../inhalte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Übersicht</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Betriebssysteme/Betriebssysteme.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Betriebssysteme</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="4">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#was-ist-ein-betriebssystem" id="toc-was-ist-ein-betriebssystem" class="nav-link active" data-scroll-target="#was-ist-ein-betriebssystem"><span class="header-section-number">2.1</span> Was ist ein Betriebssystem?</a></li>
+  <li><a href="#definitionen-eines-betriebssystems" id="toc-definitionen-eines-betriebssystems" class="nav-link" data-scroll-target="#definitionen-eines-betriebssystems"><span class="header-section-number">2.2</span> Definitionen eines Betriebssystems</a>
+  <ul>
+  <li><a href="#das-schichtenmodell-eines-computersystems" id="toc-das-schichtenmodell-eines-computersystems" class="nav-link" data-scroll-target="#das-schichtenmodell-eines-computersystems"><span class="header-section-number">2.2.1</span> Das Schichtenmodell eines Computersystems</a></li>
+  </ul></li>
+  <li><a href="#funktionen-eines-betriebssystems" id="toc-funktionen-eines-betriebssystems" class="nav-link" data-scroll-target="#funktionen-eines-betriebssystems"><span class="header-section-number">2.3</span> Funktionen eines Betriebssystems</a>
+  <ul>
+  <li><a href="#prozessmanagement" id="toc-prozessmanagement" class="nav-link" data-scroll-target="#prozessmanagement"><span class="header-section-number">2.3.1</span> Prozessmanagement</a></li>
+  <li><a href="#speicherverwaltung" id="toc-speicherverwaltung" class="nav-link" data-scroll-target="#speicherverwaltung"><span class="header-section-number">2.3.2</span> Speicherverwaltung</a></li>
+  <li><a href="#dateiverwaltung" id="toc-dateiverwaltung" class="nav-link" data-scroll-target="#dateiverwaltung"><span class="header-section-number">2.3.3</span> Dateiverwaltung</a></li>
+  <li><a href="#geräteverwaltung" id="toc-geräteverwaltung" class="nav-link" data-scroll-target="#geräteverwaltung"><span class="header-section-number">2.3.4</span> Geräteverwaltung</a></li>
+  <li><a href="#benutzerschnittstelle" id="toc-benutzerschnittstelle" class="nav-link" data-scroll-target="#benutzerschnittstelle"><span class="header-section-number">2.3.5</span> Benutzerschnittstelle</a></li>
+  <li><a href="#netzwerkverwaltung" id="toc-netzwerkverwaltung" class="nav-link" data-scroll-target="#netzwerkverwaltung"><span class="header-section-number">2.3.6</span> Netzwerkverwaltung</a></li>
+  <li><a href="#sicherheit-und-zugriffskontrolle" id="toc-sicherheit-und-zugriffskontrolle" class="nav-link" data-scroll-target="#sicherheit-und-zugriffskontrolle"><span class="header-section-number">2.3.7</span> Sicherheit und Zugriffskontrolle</a></li>
+  <li><a href="#fehlerbehandlung-und-diagnostik" id="toc-fehlerbehandlung-und-diagnostik" class="nav-link" data-scroll-target="#fehlerbehandlung-und-diagnostik"><span class="header-section-number">2.3.8</span> Fehlerbehandlung und Diagnostik</a></li>
+  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit"><span class="header-section-number">2.3.9</span> Fazit:</a></li>
+  </ul></li>
+  <li><a href="#betriebssysteme-für-client--und-server-systeme" id="toc-betriebssysteme-für-client--und-server-systeme" class="nav-link" data-scroll-target="#betriebssysteme-für-client--und-server-systeme"><span class="header-section-number">2.4</span> Betriebssysteme für Client- und Server-Systeme</a>
+  <ul>
+  <li><a href="#aufgaben-und-zweck" id="toc-aufgaben-und-zweck" class="nav-link" data-scroll-target="#aufgaben-und-zweck"><span class="header-section-number">2.4.1</span> Aufgaben und Zweck</a></li>
+  <li><a href="#ressourcenmanagement" id="toc-ressourcenmanagement" class="nav-link" data-scroll-target="#ressourcenmanagement"><span class="header-section-number">2.4.2</span> Ressourcenmanagement</a></li>
+  <li><a href="#benutzeroberfläche" id="toc-benutzeroberfläche" class="nav-link" data-scroll-target="#benutzeroberfläche"><span class="header-section-number">2.4.3</span> Benutzeroberfläche</a></li>
+  <li><a href="#stabilität-und-zuverlässigkeit" id="toc-stabilität-und-zuverlässigkeit" class="nav-link" data-scroll-target="#stabilität-und-zuverlässigkeit"><span class="header-section-number">2.4.4</span> Stabilität und Zuverlässigkeit</a></li>
+  <li><a href="#netzwerkfähigkeiten" id="toc-netzwerkfähigkeiten" class="nav-link" data-scroll-target="#netzwerkfähigkeiten"><span class="header-section-number">2.4.5</span> Netzwerkfähigkeiten</a></li>
+  <li><a href="#sicherheit-und-zugriffsverwaltung" id="toc-sicherheit-und-zugriffsverwaltung" class="nav-link" data-scroll-target="#sicherheit-und-zugriffsverwaltung"><span class="header-section-number">2.4.6</span> Sicherheit und Zugriffsverwaltung</a></li>
+  <li><a href="#virtualisierung-und-skalierbarkeit" id="toc-virtualisierung-und-skalierbarkeit" class="nav-link" data-scroll-target="#virtualisierung-und-skalierbarkeit"><span class="header-section-number">2.4.7</span> Virtualisierung und Skalierbarkeit</a></li>
+  <li><a href="#softwareunterstützung" id="toc-softwareunterstützung" class="nav-link" data-scroll-target="#softwareunterstützung"><span class="header-section-number">2.4.8</span> Softwareunterstützung</a></li>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link" data-scroll-target="#zusammenfassung"><span class="header-section-number">2.4.9</span> Zusammenfassung:</a></li>
+  </ul></li>
+  <li><a href="#betriebssysteme-im-vergleich-windows-vs.-linux" id="toc-betriebssysteme-im-vergleich-windows-vs.-linux" class="nav-link" data-scroll-target="#betriebssysteme-im-vergleich-windows-vs.-linux"><span class="header-section-number">2.5</span> Betriebssysteme im Vergleich: Windows vs.&nbsp;Linux</a>
+  <ul>
+  <li><a href="#lizenzmodell" id="toc-lizenzmodell" class="nav-link" data-scroll-target="#lizenzmodell"><span class="header-section-number">2.5.1</span> Lizenzmodell</a></li>
+  <li><a href="#benutzerfreundlichkeit" id="toc-benutzerfreundlichkeit" class="nav-link" data-scroll-target="#benutzerfreundlichkeit"><span class="header-section-number">2.5.2</span> Benutzerfreundlichkeit</a></li>
+  <li><a href="#anpassbarkeit-und-flexibilität" id="toc-anpassbarkeit-und-flexibilität" class="nav-link" data-scroll-target="#anpassbarkeit-und-flexibilität"><span class="header-section-number">2.5.3</span> Anpassbarkeit und Flexibilität</a></li>
+  <li><a href="#sicherheit" id="toc-sicherheit" class="nav-link" data-scroll-target="#sicherheit"><span class="header-section-number">2.5.4</span> Sicherheit</a></li>
+  <li><a href="#softwareunterstützung-1" id="toc-softwareunterstützung-1" class="nav-link" data-scroll-target="#softwareunterstützung-1"><span class="header-section-number">2.5.5</span> Softwareunterstützung</a></li>
+  <li><a href="#zielgruppe-und-anwendungsfälle" id="toc-zielgruppe-und-anwendungsfälle" class="nav-link" data-scroll-target="#zielgruppe-und-anwendungsfälle"><span class="header-section-number">2.5.6</span> Zielgruppe und Anwendungsfälle</a></li>
+  <li><a href="#server-anwendungen" id="toc-server-anwendungen" class="nav-link" data-scroll-target="#server-anwendungen"><span class="header-section-number">2.5.7</span> Server Anwendungen</a></li>
+  <li><a href="#fazit-1" id="toc-fazit-1" class="nav-link" data-scroll-target="#fazit-1"><span class="header-section-number">2.5.8</span> Fazit:</a></li>
+  </ul></li>
+  <li><a href="#weitere-betriebssysteme" id="toc-weitere-betriebssysteme" class="nav-link" data-scroll-target="#weitere-betriebssysteme"><span class="header-section-number">2.6</span> Weitere Betriebssysteme</a>
+  <ul>
+  <li><a href="#macos-apple" id="toc-macos-apple" class="nav-link" data-scroll-target="#macos-apple"><span class="header-section-number">2.6.1</span> macOS (Apple)</a></li>
+  <li><a href="#unix" id="toc-unix" class="nav-link" data-scroll-target="#unix"><span class="header-section-number">2.6.2</span> Unix</a></li>
+  <li><a href="#freebsd" id="toc-freebsd" class="nav-link" data-scroll-target="#freebsd"><span class="header-section-number">2.6.3</span> FreeBSD</a></li>
+  <li><a href="#risc-os" id="toc-risc-os" class="nav-link" data-scroll-target="#risc-os"><span class="header-section-number">2.6.4</span> RISC OS</a></li>
+  <li><a href="#reactos" id="toc-reactos" class="nav-link" data-scroll-target="#reactos"><span class="header-section-number">2.6.5</span> ReactOS</a></li>
+  <li><a href="#zos-ibm" id="toc-zos-ibm" class="nav-link" data-scroll-target="#zos-ibm"><span class="header-section-number">2.6.6</span> Z/OS (IBM)</a></li>
+  </ul></li>
+  <li><a href="#echtzeitbetriebssysteme" id="toc-echtzeitbetriebssysteme" class="nav-link" data-scroll-target="#echtzeitbetriebssysteme"><span class="header-section-number">2.7</span> Echtzeitbetriebssysteme</a>
+  <ul>
+  <li><a href="#zeitliche-anforderungen" id="toc-zeitliche-anforderungen" class="nav-link" data-scroll-target="#zeitliche-anforderungen"><span class="header-section-number">2.7.1</span> Zeitliche Anforderungen</a></li>
+  <li><a href="#task-scheduling-aufgabenplanung" id="toc-task-scheduling-aufgabenplanung" class="nav-link" data-scroll-target="#task-scheduling-aufgabenplanung"><span class="header-section-number">2.7.2</span> Task Scheduling (Aufgabenplanung)</a></li>
+  <li><a href="#determinismus" id="toc-determinismus" class="nav-link" data-scroll-target="#determinismus"><span class="header-section-number">2.7.3</span> Determinismus</a></li>
+  <li><a href="#unterbrechungshandling-interrupt-handling" id="toc-unterbrechungshandling-interrupt-handling" class="nav-link" data-scroll-target="#unterbrechungshandling-interrupt-handling"><span class="header-section-number">2.7.4</span> Unterbrechungshandling (Interrupt Handling)</a></li>
+  <li><a href="#speichermanagement" id="toc-speichermanagement" class="nav-link" data-scroll-target="#speichermanagement"><span class="header-section-number">2.7.5</span> Speichermanagement</a></li>
+  <li><a href="#prioritätensteuerung" id="toc-prioritätensteuerung" class="nav-link" data-scroll-target="#prioritätensteuerung"><span class="header-section-number">2.7.6</span> Prioritätensteuerung</a></li>
+  <li><a href="#anwendungsbereiche" id="toc-anwendungsbereiche" class="nav-link" data-scroll-target="#anwendungsbereiche"><span class="header-section-number">2.7.7</span> Anwendungsbereiche</a></li>
+  <li><a href="#fehlertoleranz-und-zuverlässigkeit" id="toc-fehlertoleranz-und-zuverlässigkeit" class="nav-link" data-scroll-target="#fehlertoleranz-und-zuverlässigkeit"><span class="header-section-number">2.7.8</span> Fehlertoleranz und Zuverlässigkeit</a></li>
+  <li><a href="#minimalismus-und-modularität" id="toc-minimalismus-und-modularität" class="nav-link" data-scroll-target="#minimalismus-und-modularität"><span class="header-section-number">2.7.9</span> Minimalismus und Modularität</a></li>
+  <li><a href="#beispiele-für-echtzeitbetriebssysteme" id="toc-beispiele-für-echtzeitbetriebssysteme" class="nav-link" data-scroll-target="#beispiele-für-echtzeitbetriebssysteme"><span class="header-section-number">2.7.10</span> Beispiele für Echtzeitbetriebssysteme</a></li>
+  <li><a href="#zusammenfassung-1" id="toc-zusammenfassung-1" class="nav-link" data-scroll-target="#zusammenfassung-1"><span class="header-section-number">2.7.11</span> Zusammenfassung</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Betriebssysteme</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="was-ist-ein-betriebssystem" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="was-ist-ein-betriebssystem"><span class="header-section-number">2.1</span> Was ist ein Betriebssystem?</h2>
+<p>Ein Betriebssystem (OS) ist die Software, die es ermöglicht, einen Computer sinnvoll zu nutzen, indem es die Steuerung und Verwaltung der Hardware sowie die Ausführung von Programmen übernimmt. Computer bestehen aus Hardwarekomponenten, deren Verwaltung komplex ist. Um diese Komplexität zu reduzieren, wurde das Betriebssystem entwickelt, um Programmierern eine standardisierte Schnittstelle zur Verfügung zu stellen, die den direkten Umgang mit der Hardware vereinfacht und gleichzeitig deren Verwaltung übernimmt. Es fungiert als Vermittler zwischen der Hardware und den Benutzerprogrammen.</p>
+</section>
+<section id="definitionen-eines-betriebssystems" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="definitionen-eines-betriebssystems"><span class="header-section-number">2.2</span> Definitionen eines Betriebssystems</h2>
+<ul>
+<li><strong>DIN 44300</strong>: Betriebssysteme sind Programme, die die Basis eines digitalen Rechensystems bilden und die Ausführung sowie Überwachung von Programmen steuern.</li>
+<li><strong>Duden</strong>: Betriebssysteme umfassen alle Programme, die die Ausführung von Benutzerprogrammen sowie die Verteilung und Überwachung der Betriebsmittel steuern.</li>
+<li><strong>Rembold</strong>: Der Zweck eines Betriebssystems liegt darin, mehrere Anwender die Nutzung einer Rechenanlage möglichst einfach, zuverlässig und wirtschaftlich zu ermöglichen.</li>
+</ul>
+<section id="das-schichtenmodell-eines-computersystems" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="das-schichtenmodell-eines-computersystems"><span class="header-section-number">2.2.1</span> Das Schichtenmodell eines Computersystems</h3>
+<p>Um die Entwicklung von Software zu erleichtern und Hardwareunabhängigkeit zu gewährleisten, wurde ein Schichtenmodell eingeführt. Dieses Modell unterteilt ein Computersystem in verschiedene Ebenen:</p>
+<ol type="1">
+<li><strong>Physikalische Geräte</strong>: Die unterste Schicht, bestehend aus den Hardwarekomponenten.</li>
+<li><strong>Mikroprogrammierung</strong>: Steuert die physikalischen Geräte direkt mithilfe von Mikrocode.</li>
+<li><strong>Maschinensprache</strong>: Der Satz an Instruktionen, die die Mikroprogrammierung ausführt.</li>
+<li><strong>Betriebssystem</strong>: Versteckt die Komplexität der Hardware und stellt Schnittstellen zur Hardwareverwaltung bereit, wie z.B. Speicher- und Prozessormanagement.</li>
+<li><strong>Systemprogramme/Dienstprogramme</strong>: Unterstützende Software, die das Betriebssystem ergänzt, jedoch nicht zur Anwendungssoftware gehört.</li>
+<li><strong>Anwenderprogramme</strong>: Software, die direkt vom Benutzer genutzt wird, wie z.B. Webbrowser oder Office-Anwendungen.</li>
+</ol>
+<p>Durch diese Schichtung wird eine klare Trennung der Verantwortlichkeiten erreicht, die die Portabilität und Wartung von Software erleichtert.</p>
+</section>
+</section>
+<section id="funktionen-eines-betriebssystems" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="funktionen-eines-betriebssystems"><span class="header-section-number">2.3</span> Funktionen eines Betriebssystems</h2>
+<p>Ein Betriebssystem (Englisch: Operating System … OS) funktioniert als Vermittler zwischen der Hardware eines Computers und den darauf ausgeführten Anwendungen bzw. Programmen. Es übernimmt die Verwaltung der Ressourcen des Computers und sorgt dafür, dass verschiedene Programme effizient und sicher laufen. Die wesentlichen Funktionen eines Betriebssystems lassen sich in mehrere Kernaufgaben gliedern:</p>
+<section id="prozessmanagement" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="prozessmanagement"><span class="header-section-number">2.3.1</span> Prozessmanagement</h3>
+<p>Das Betriebssystem verwaltet die Ausführung von Programmen in Form von Prozessen. Jeder Prozess stellt ein laufendes Programm dar, und das OS stellt sicher, dass diese Prozesse effizient abgearbeitet werden. Dies umfasst: - Prozesswechsel (Multitasking): Das OS schaltet zwischen verschiedenen Prozessen hin und her, sodass mehrere Anwendungen gleichzeitig laufen können (z.B. ein Webbrowser und eine Textverarbeitung). - Zuweisung von Prozessorzeit: Das OS entscheidet, welcher Prozess wie viel Rechenleistung (CPU-Zeit) erhält, und überwacht deren Ausführung. - Synchronisation und Kommunikation: Prozesse müssen häufig miteinander kommunizieren, z.B. um Daten auszutauschen. Das Betriebssystem regelt diese Inter-Prozess-Kommunikation.</p>
+</section>
+<section id="speicherverwaltung" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="speicherverwaltung"><span class="header-section-number">2.3.2</span> Speicherverwaltung</h3>
+<p>Das Betriebssystem verwaltet den Arbeitsspeicher (RAM) des Computers, indem es: - <strong>Speicherplatz zuteilt</strong>: Wenn Programme gestartet werden, weist das OS ihnen Speicher zu. - <strong>Virtuellen Speicher verwendet</strong>: Wenn der physische Speicher knapp wird, nutzt das OS die Festplatte als erweiterten Speicher (Swap-Speicher), um größere Programme oder mehrere Prozesse gleichzeitig laufen zu lassen. - <strong>Speicherfreigabe und Schutz</strong>: Das OS sorgt dafür, dass Programme nur auf ihren eigenen Speicherbereich zugreifen und verhindert, dass ein Programm den Speicher eines anderen Programms beeinflusst.</p>
+</section>
+<section id="dateiverwaltung" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="dateiverwaltung"><span class="header-section-number">2.3.3</span> Dateiverwaltung</h3>
+<p>Das Betriebssystem organisiert und verwaltet Dateien und Verzeichnisse (Ordner) auf Datenträgern wie Festplatten oder SSDs. Es bietet eine Schnittstelle, mit der Benutzer und Anwendungen auf Dateien zugreifen, sie speichern, lesen, schreiben, löschen oder ändern können. Dies umfasst: - <strong>Dateisysteme</strong>: Das OS verwendet Dateisysteme (z.B. NTFS, FAT32), um Daten strukturiert zu speichern und effizient abzurufen. - <strong>Berechtigungen</strong>: Das Betriebssystem steuert den Zugriff auf Dateien und Verzeichnisse, sodass Benutzer oder Programme nur Zugriff auf Dateien haben, die ihnen zugewiesen wurden.</p>
+</section>
+<section id="geräteverwaltung" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="geräteverwaltung"><span class="header-section-number">2.3.4</span> Geräteverwaltung</h3>
+<p>Das Betriebssystem steuert alle angeschlossenen Geräte wie Drucker, Festplatten, Maus, Tastatur und Netzwerkgeräte. Diese Aufgabe wird oft durch <strong>Gerätetreiber</strong> erledigt, die spezifische Software sind, die dem OS ermöglicht, mit der Hardware zu kommunizieren. Das OS kümmert sich um: - <strong>Gerätesteuerung</strong>: Kommunikation mit der Hardware, um sie anzusteuern. - <strong>Ressourcenzuweisung</strong>: Zuweisung von Hardware-Ressourcen (z.B. Speicher, Eingabe-/Ausgabe-Kanälen) an die entsprechenden Geräte.</p>
+</section>
+<section id="benutzerschnittstelle" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="benutzerschnittstelle"><span class="header-section-number">2.3.5</span> Benutzerschnittstelle</h3>
+<p>Das Betriebssystem bietet Schnittstellen, über die Benutzer und Programme mit dem System interagieren können. Diese können sein: - <strong>Grafische Benutzeroberfläche (GUI)</strong>: Eine visuelle Oberfläche, die Symbole, Fenster und Menüs verwendet, um die Interaktion zu vereinfachen (z.B. Windows, macOS). - <strong>Befehlszeilenschnittstelle (CLI)</strong>: Eine textbasierte Benutzeroberfläche, in der Befehle direkt eingegeben werden (z.B. Terminal in Linux).</p>
+</section>
+<section id="netzwerkverwaltung" class="level3" data-number="2.3.6">
+<h3 data-number="2.3.6" class="anchored" data-anchor-id="netzwerkverwaltung"><span class="header-section-number">2.3.6</span> Netzwerkverwaltung</h3>
+<p>Viele Betriebssysteme bieten Funktionen zur Verwaltung von Netzwerkverbindungen. Sie erlauben es Computern, sich miteinander zu verbinden, um Daten auszutauschen oder Dienste zu nutzen. Dies umfasst: - <strong>Verbindungsaufbau und -verwaltung</strong>: Das OS unterstützt Protokolle wie TCP/IP, die für die Kommunikation im Internet und in lokalen Netzwerken unerlässlich sind. - <strong>Ressourcenaustausch</strong>: Das OS ermöglicht den Zugriff auf Netzlaufwerke oder die Nutzung von gemeinsam genutzten Druckern.</p>
+</section>
+<section id="sicherheit-und-zugriffskontrolle" class="level3" data-number="2.3.7">
+<h3 data-number="2.3.7" class="anchored" data-anchor-id="sicherheit-und-zugriffskontrolle"><span class="header-section-number">2.3.7</span> Sicherheit und Zugriffskontrolle</h3>
+<p>Das Betriebssystem sorgt für die Sicherheit des Systems, indem es Benutzer authentifiziert und sicherstellt, dass nur autorisierte Benutzer oder Programme bestimmte Aktionen ausführen können. Dies umfasst: - <strong>Zugriffskontrollen</strong>: Verwaltung von Benutzerrechten, die den Zugriff auf Dateien, Programme oder Systemressourcen einschränken. - <strong>Schutzmechanismen</strong>: Maßnahmen wie Firewalls, Verschlüsselung und Passwortschutz, die das System vor externen und internen Bedrohungen schützen.</p>
+</section>
+<section id="fehlerbehandlung-und-diagnostik" class="level3" data-number="2.3.8">
+<h3 data-number="2.3.8" class="anchored" data-anchor-id="fehlerbehandlung-und-diagnostik"><span class="header-section-number">2.3.8</span> Fehlerbehandlung und Diagnostik</h3>
+<p>Das Betriebssystem überwacht die Ausführung von Programmen und Hardware, um Fehler zu erkennen und zu beheben. Es kann Abstürze von Programmen erkennen und Maßnahmen ergreifen, um das System stabil zu halten, wie z.B. Neustarts von Diensten oder das Schließen fehlerhafter Programme.</p>
+</section>
+<section id="fazit" class="level3" data-number="2.3.9">
+<h3 data-number="2.3.9" class="anchored" data-anchor-id="fazit"><span class="header-section-number">2.3.9</span> Fazit:</h3>
+<p>Ein Betriebssystem ist ein zentraler Bestandteil eines Computersystems, der die Nutzung von Hardware durch Softwareprogramme steuert und vereinfacht. Es organisiert die Ressourcen, stellt Sicherheit und Effizienz sicher und bietet eine Schnittstelle für Benutzer und Anwendungen. Die grundlegenden Aufgaben umfassen die Verwaltung von Prozessen, Speicher, Dateien, Geräten, Netzwerken und die Sicherstellung eines stabilen Betriebs.</p>
+</section>
+</section>
+<section id="betriebssysteme-für-client--und-server-systeme" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="betriebssysteme-für-client--und-server-systeme"><span class="header-section-number">2.4</span> Betriebssysteme für Client- und Server-Systeme</h2>
+<p>Ein Betriebssystem (OS) für einen <strong>Server</strong> unterscheidet sich von einem Betriebssystem für einen <strong>Client</strong> vor allem durch seine Architektur, Funktionsweise und die Aufgaben, die es erfüllen muss. Hier sind die wesentlichen Unterschiede:</p>
+<section id="aufgaben-und-zweck" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="aufgaben-und-zweck"><span class="header-section-number">2.4.1</span> Aufgaben und Zweck</h3>
+<ul>
+<li><p><strong>Server-Betriebssystem</strong>: Ein Server-OS ist darauf ausgelegt, <strong>Dienste und Ressourcen</strong> für mehrere Clients (Benutzer oder andere Computer) bereitzustellen. Es verwaltet Netzwerke, Serverdienste wie Web-, Datenbank- oder E-Mail-Server, und ermöglicht die zentrale Verwaltung von Daten und Anwendungen. Es muss auf Effizienz und Zuverlässigkeit im Dauerbetrieb ausgelegt sein, um viele gleichzeitige Anfragen zu verarbeiten.</p></li>
+<li><p><strong>Client-Betriebssystem</strong>: Ein Client-OS (z.B. Windows 10/11, macOS, Linux-Desktop) ist für die Nutzung durch <strong>einzelne Benutzer</strong> konzipiert. Es ermöglicht das Ausführen von Desktop-Anwendungen wie Office-Programmen, Webbrowsern oder Multimedia-Software und ist optimiert für Interaktivität, Benutzerfreundlichkeit und Anwendungsperformance.</p></li>
+</ul>
+</section>
+<section id="ressourcenmanagement" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="ressourcenmanagement"><span class="header-section-number">2.4.2</span> Ressourcenmanagement</h3>
+<ul>
+<li><strong>Server-OS</strong>: Muss große Mengen an Hardware-Ressourcen effizient verwalten. Es wird erwartet, dass ein Server-OS <strong>hohe Arbeitslasten</strong> bewältigt, wie z.B. das gleichzeitige Verarbeiten von Anfragen, intensive Netzwerknutzung und Speicherzugriffe. Ressourcen wie CPU, RAM, Festplattenplatz und Netzwerkkapazität müssen gleichmäßig verteilt und skaliert werden können, um eine hohe Leistung sicherzustellen.
+<ul>
+<li>Beispiel: <strong>Windows Server</strong>, <strong>Linux Server (z.B. Ubuntu Server, CentOS)</strong></li>
+</ul></li>
+<li><strong>Client-OS</strong>: Ein Client-OS ist für den <strong>Einzelnutzerbetrieb</strong> und Alltagsaufgaben optimiert, wie das Ausführen von Office-Anwendungen, Websurfen oder das Ansehen von Videos. Es muss zwar auch Ressourcen verwalten, aber die Anforderungen an Parallelität und Skalierbarkeit sind deutlich geringer als bei einem Server-OS.</li>
+</ul>
+</section>
+<section id="benutzeroberfläche" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="benutzeroberfläche"><span class="header-section-number">2.4.3</span> Benutzeroberfläche</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Ein Server-Betriebssystem hat häufig eine <strong>minimale Benutzeroberfläche</strong> oder sogar keine grafische Oberfläche (GUI) und läuft nur über eine <strong>Kommandozeile</strong> (z.B. bei vielen Linux-Servern). Dies spart Ressourcen, da Server oft im Hintergrund arbeiten und keine direkte Interaktion durch Endbenutzer benötigen. Administratoren greifen über Fernzugriffsprotokolle wie SSH oder Remote Desktop auf das System zu.</p></li>
+<li><p><strong>Client-OS</strong>: Ein Client-OS bietet eine <strong>benutzerfreundliche grafische Benutzeroberfläche (GUI)</strong>, die auf die Interaktion mit dem Endnutzer ausgerichtet ist. Die GUI ist oft hochgradig visuell und intuitiv gestaltet, um die Benutzererfahrung zu verbessern.</p></li>
+</ul>
+</section>
+<section id="stabilität-und-zuverlässigkeit" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="stabilität-und-zuverlässigkeit"><span class="header-section-number">2.4.4</span> Stabilität und Zuverlässigkeit</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Server-Betriebssysteme sind für <strong>maximale Stabilität und Zuverlässigkeit</strong> ausgelegt, da sie oft ununterbrochen laufen müssen (24/7). Sie bieten spezielle Mechanismen wie <strong>Fehlererkennung, automatische Neustarts von Diensten</strong> und erweiterte Protokollierungsfunktionen, um Systemausfälle zu minimieren. Downtime oder Abstürze sind in einem Server-Betrieb problematisch und müssen vermieden werden.</p></li>
+<li><p>Client-OS: Client-Betriebssysteme sind zwar stabil, aber sie müssen nicht 24/7 unter Hochlast laufen. Sie sind eher auf Benutzerfreundlichkeit und Leistung im täglichen Gebrauch optimiert. Ein Neustart oder gelegentlicher Absturz hat meist weniger gravierende Folgen.</p></li>
+</ul>
+</section>
+<section id="netzwerkfähigkeiten" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="netzwerkfähigkeiten"><span class="header-section-number">2.4.5</span> Netzwerkfähigkeiten</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Ein Server-Betriebssystem bietet umfangreiche <strong>Netzwerkfunktionen</strong> und Protokolle, die für Serverdienste erforderlich sind. Dazu gehören <strong>Netzwerkdateifreigaben</strong>, <strong>Datenbankverwaltung</strong>, <strong>Webserverdienste</strong> und <strong>Lastverteilung</strong>. Server-OS unterstützen oft <strong>Fortgeschrittene Netzwerkprotokolle</strong>, z.B. für VPNs, Load Balancing, Firewalls und Virtualisierung.</p></li>
+<li><p><strong>Client-OS</strong>: Ein Client-OS bietet grundlegende Netzwerkfunktionen, die für die Verbindung mit dem Internet, Druckern oder Freigaben im lokalen Netzwerk erforderlich sind. Es muss nicht auf die Bereitstellung komplexer Netzwerkinfrastrukturen ausgelegt sein.</p></li>
+</ul>
+</section>
+<section id="sicherheit-und-zugriffsverwaltung" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="sicherheit-und-zugriffsverwaltung"><span class="header-section-number">2.4.6</span> Sicherheit und Zugriffsverwaltung</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Server-OS bieten erweiterte <strong>Sicherheitsfunktionen</strong>, um die Daten und Dienste vor unbefugtem Zugriff und Angriffen zu schützen. Sie unterstützen fein abgestimmte <strong>Benutzerrechte</strong> und <strong>Zugriffskontrollen</strong> sowie integrierte <strong>Firewall- und Verschlüsselungsmechanismen</strong>. Ein Server-OS hat oft mehrere Sicherheitsstufen und -protokolle, die in Unternehmensnetzwerken verwendet werden.</p></li>
+<li><p><strong>Client-OS</strong>: Sicherheit ist auch bei Client-Betriebssystemen wichtig, jedoch eher auf den <strong>persönlichen Schutz</strong> ausgerichtet, wie die Absicherung vor Malware und unbefugtem Zugriff auf den Computer. Client-OS bieten oft einfache Sicherheitsmechanismen wie Passwörter, Benutzerrechte und Antivirenprogramme.</p></li>
+</ul>
+</section>
+<section id="virtualisierung-und-skalierbarkeit" class="level3" data-number="2.4.7">
+<h3 data-number="2.4.7" class="anchored" data-anchor-id="virtualisierung-und-skalierbarkeit"><span class="header-section-number">2.4.7</span> Virtualisierung und Skalierbarkeit</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Server-Betriebssysteme sind häufig für <strong>Virtualisierung</strong> und <strong>Cloud-Anwendungen</strong> ausgelegt. Sie unterstützen das Erstellen und Verwalten von <strong>virtuellen Maschinen</strong> (VMs) und ermöglichen es, mehrere Serverinstanzen auf einer einzigen physischen Maschine zu betreiben. Dies macht sie hoch skalierbar und flexibel für verschiedene Anwendungsfälle, wie z.B. Cloud-Computing oder Hosting-Dienste.</p></li>
+<li><p><strong>Client-OS</strong>: Während auch Client-Betriebssysteme Virtualisierungsfunktionen unterstützen können, sind sie nicht für die Ausführung mehrerer Server-Instanzen konzipiert. Virtualisierung wird hier eher für <strong>Test- und Entwicklungszwecke</strong> verwendet.</p></li>
+</ul>
+</section>
+<section id="softwareunterstützung" class="level3" data-number="2.4.8">
+<h3 data-number="2.4.8" class="anchored" data-anchor-id="softwareunterstützung"><span class="header-section-number">2.4.8</span> Softwareunterstützung</h3>
+<ul>
+<li><p><strong>Server-OS</strong>: Server-OS unterstützen spezialisierte Software und Dienste, die für Serverumgebungen wichtig sind, wie z.B. Datenbankmanagementsysteme (MySQL, SQL Server), Webserver (Apache, Nginx), E-Mail-Server oder Virtualisierungslösungen (VMware, Hyper-V). Solche Systeme sind oft darauf ausgelegt, ohne viel Benutzereingriff zu funktionieren.</p></li>
+<li><p><strong>Client-OS</strong>: Client-Betriebssysteme unterstützen hauptsächlich <strong>Anwenderprogramme</strong> wie Office-Anwendungen, Webbrowser, Multimedia-Software und Spiele. Der Fokus liegt auf <strong>Benutzerfreundlichkeit und Interaktivität</strong>, nicht auf der Verwaltung von Serverdiensten.</p></li>
+</ul>
+</section>
+<section id="zusammenfassung" class="level3" data-number="2.4.9">
+<h3 data-number="2.4.9" class="anchored" data-anchor-id="zusammenfassung"><span class="header-section-number">2.4.9</span> Zusammenfassung:</h3>
+<p>Ein Server-Betriebssystem ist auf Stabilität, Skalierbarkeit, Sicherheit und das effiziente Verwalten vieler gleichzeitiger Benutzer und Dienste ausgelegt. Es arbeitet oft im Hintergrund und muss anspruchsvolle Aufgaben wie die Verwaltung von Netzwerken und Serverdiensten bewältigen. Ein Client-Betriebssystem hingegen ist für die Interaktion eines einzelnen Benutzers optimiert, bietet eine benutzerfreundliche Oberfläche und fokussiert sich auf die Unterstützung von Anwendungen für den täglichen Gebrauch.</p>
+</section>
+</section>
+<section id="betriebssysteme-im-vergleich-windows-vs.-linux" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="betriebssysteme-im-vergleich-windows-vs.-linux"><span class="header-section-number">2.5</span> Betriebssysteme im Vergleich: Windows vs.&nbsp;Linux</h2>
+<p>Windows und Linux sind zwei der bekanntesten Betriebssysteme, die in verschiedenen Umgebungen eingesetzt werden. Beide haben ihre Vor- und Nachteile, die sie für unterschiedliche Anwendungsfälle geeignet machen. Hier sind einige Vergleichspunkte zwischen Windows und Linux:</p>
+<section id="lizenzmodell" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="lizenzmodell"><span class="header-section-number">2.5.1</span> Lizenzmodell</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows ist ein <strong>proprietäres Betriebssystem</strong> von Microsoft, das kommerziell lizenziert wird. Benutzer müssen für die Nutzung von Windows-Lizenzen bezahlen, entweder als Einzelkauf oder im Rahmen eines Abonnementmodells (z.B. Windows 10/11).</p></li>
+<li><p><strong>Linux</strong>: Linux ist ein <strong>Open-Source-Betriebssystem</strong>, das frei verfügbar ist und unter verschiedenen Lizenzmodellen veröffentlicht wird (z.B. GNU General Public License). Die meisten Linux-Distributionen können kostenlos heruntergeladen und verwendet werden. Es gibt auch kommerzielle Linux-Varianten, die spezielle Dienste und Support anbieten.</p></li>
+</ul>
+</section>
+<section id="benutzerfreundlichkeit" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="benutzerfreundlichkeit"><span class="header-section-number">2.5.2</span> Benutzerfreundlichkeit</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows ist bekannt für seine <strong>benutzerfreundliche grafische Benutzeroberfläche (GUI)</strong>, die auf die Interaktion mit Endbenutzern ausgerichtet ist. Es bietet eine Vielzahl von Anwendungen und Treibern, die die Installation und Nutzung von Software erleichtern. Windows ist weit verbreitet und wird von vielen Benutzern bevorzugt, die mit PCs vertraut sind.</p></li>
+<li><p><strong>Linux</strong>: Linux bietet eine <strong>vielfältige Auswahl an Benutzeroberflächen</strong>, von einfachen und schlanken Oberflächen bis hin zu komplexen und anpassbaren Desktops. Die Benutzerfreundlichkeit von Linux hängt stark von der gewählten Distribution und der Erfahrung des Benutzers ab. Einige Linux-Distributionen sind für Anfänger geeignet, während andere eine steilere Lernkurve haben.</p></li>
+</ul>
+</section>
+<section id="anpassbarkeit-und-flexibilität" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="anpassbarkeit-und-flexibilität"><span class="header-section-number">2.5.3</span> Anpassbarkeit und Flexibilität</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows ist ein geschlossenes Betriebssystem, das weniger Anpassungsmöglichkeiten bietet. Benutzer können die Benutzeroberfläche und einige Einstellungen anpassen, aber die tiefgreifenden Änderungen sind begrenzt. Windows ist für den allgemeinen Gebrauch optimiert und bietet eine breite Palette von Anwendungen und Treibern.</p></li>
+<li><p><strong>Linux</strong>: Linux ist bekannt für seine <strong>Anpassbarkeit und Flexibilität</strong>. Benutzer können das Betriebssystem nach ihren Bedürfnissen und Vorlieben anpassen, indem sie verschiedene Desktop-Umgebungen, Paketmanager und Konfigurationsoptionen verwenden. Linux eignet sich gut für Entwickler und fortgeschrittene Benutzer, die spezifische Anforderungen haben.</p></li>
+</ul>
+</section>
+<section id="sicherheit" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="sicherheit"><span class="header-section-number">2.5.4</span> Sicherheit</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows hat in der Vergangenheit mit Sicherheitsproblemen zu kämpfen gehabt, da es ein beliebtes Ziel für Malware und Angriffe ist. Microsoft hat jedoch seine Sicherheitsmaßnahmen verbessert und bietet regelmäßige Updates und Sicherheitspatches an, um die Sicherheit von Windows zu gewährleisten.</p></li>
+<li><p><strong>Linux</strong>: Linux gilt als sichereres Betriebssystem als Windows, da es auf einem robusten Sicherheitsmodell basiert. Die meisten Linux-Distributionen bieten regelmäßige Updates und Sicherheitspatches, um Schwachstellen zu beheben. Die Open-Source-Natur von Linux ermöglicht es der Community, Sicherheitslücken schnell zu identifizieren und zu beheben.</p></li>
+</ul>
+</section>
+<section id="softwareunterstützung-1" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="softwareunterstützung-1"><span class="header-section-number">2.5.5</span> Softwareunterstützung</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows bietet eine breite Palette von Anwendungen und Spielen, die speziell für das Betriebssystem entwickelt wurden. Viele kommerzielle Softwareanbieter unterstützen Windows, was die Verfügbarkeit von Anwendungen erleichtert. Windows ist auch mit einer Vielzahl von Hardwaregeräten und Treibern kompatibel.</p></li>
+<li><p><strong>Linux</strong>: Linux hat in den letzten Jahren eine verbesserte Softwareunterstützung erfahren, aber es gibt immer noch weniger kommerzielle Anwendungen und Spiele für Linux im Vergleich zu Windows. Viele Open-Source-Alternativen sind jedoch verfügbar, die die meisten Anforderungen abdecken. Die Kompatibilität mit Hardware kann je nach Distribution variieren.</p></li>
+</ul>
+</section>
+<section id="zielgruppe-und-anwendungsfälle" class="level3" data-number="2.5.6">
+<h3 data-number="2.5.6" class="anchored" data-anchor-id="zielgruppe-und-anwendungsfälle"><span class="header-section-number">2.5.6</span> Zielgruppe und Anwendungsfälle</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows ist weit verbreitet und wird von einer breiten Palette von Benutzern genutzt, von Heimanwendern über Unternehmen bis hin zu Regierungsbehörden. Es ist für den allgemeinen Gebrauch optimiert und bietet eine umfassende Unterstützung für verschiedene Anwendungsfälle.</p></li>
+<li><p><strong>Linux</strong>: Linux wird häufig von Entwicklern, Systemadministratoren, Wissenschaftlern und technisch versierten Benutzern bevorzugt. Es wird in Serverumgebungen, Embedded-Systemen, Supercomputern und Cloud-Infrastrukturen eingesetzt. Linux eignet sich auch gut für Benutzer, die Datenschutz und Sicherheit priorisieren.</p></li>
+</ul>
+</section>
+<section id="server-anwendungen" class="level3" data-number="2.5.7">
+<h3 data-number="2.5.7" class="anchored" data-anchor-id="server-anwendungen"><span class="header-section-number">2.5.7</span> Server Anwendungen</h3>
+<ul>
+<li><p><strong>Windows</strong>: Windows Server ist eine spezielle Version von Windows, die für Serverumgebungen optimiert ist. Es bietet Funktionen wie Active Directory, IIS (Internet Information Services), SQL Server und Hyper-V für Virtualisierung. Windows Server wird häufig in Unternehmensnetzwerken, Webservern und Datenbankumgebungen eingesetzt.</p></li>
+<li><p><strong>Linux</strong>: Linux ist ein beliebtes Betriebssystem für Server, da es stabil, sicher und skalierbar ist. Es bietet eine Vielzahl von Serveranwendungen und Diensten, darunter Apache (Webserver), MySQL/MariaDB (Datenbank), Nginx, Docker und Kubernetes. Linux-Server werden oft in Cloud-Infrastrukturen und Webhosting-Umgebungen eingesetzt.</p></li>
+</ul>
+</section>
+<section id="fazit-1" class="level3" data-number="2.5.8">
+<h3 data-number="2.5.8" class="anchored" data-anchor-id="fazit-1"><span class="header-section-number">2.5.8</span> Fazit:</h3>
+<p>Windows und Linux sind zwei verschiedene Betriebssysteme mit jeweils eigenen Stärken und Schwächen. Windows ist bekannt für seine Benutzerfreundlichkeit, Softwareunterstützung und breite Anwendungsbasis, während Linux für seine Anpassbarkeit, Sicherheit und Flexibilität geschätzt wird. Die Wahl zwischen Windows und Linux hängt von den spezifischen Anforderungen, Kenntnissen und Präferenzen des Benutzers ab.</p>
+</section>
+</section>
+<section id="weitere-betriebssysteme" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="weitere-betriebssysteme"><span class="header-section-number">2.6</span> Weitere Betriebssysteme</h2>
+<p>Neben <strong>Windows</strong> und <strong>Linux</strong> gibt es eine Vielzahl von Betriebssystemen, die entweder für spezielle Anwendungsbereiche, bestimmte Geräte oder als Alternative zu den populären OS entwickelt wurden. Hier ist eine Übersicht der wichtigsten und bekanntesten Betriebssysteme:</p>
+<section id="macos-apple" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="macos-apple"><span class="header-section-number">2.6.1</span> macOS (Apple)</h3>
+<ul>
+<li><strong>Plattform</strong>: Desktop und Laptop-Computer von Apple (MacBook, iMac).</li>
+<li><strong>Eigenschaften</strong>: macOS ist ein Unix-basiertes Betriebssystem, das speziell für Apple-Hardware entwickelt wurde. Es ist bekannt für seine Benutzerfreundlichkeit, Stabilität und Integration in das Apple-Ökosystem.</li>
+<li><strong>Besonderheiten</strong>: Intuitive grafische Benutzeroberfläche (GUI), eng verknüpft mit iOS-Geräten, starke Sicherheitsfeatures und leistungsstarke Medien- und Kreativsoftware.</li>
+</ul>
+</section>
+<section id="unix" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="unix"><span class="header-section-number">2.6.2</span> Unix</h3>
+<ul>
+<li><strong>Plattform</strong>: Server, Workstations, spezielle Systeme.</li>
+<li><strong>Eigenschaften</strong>: Unix ist ein robustes, stabiles und multiuserfähiges Betriebssystem, das in den 1970er Jahren entwickelt wurde. Viele moderne Betriebssysteme, einschließlich Linux und macOS, basieren auf Unix-Prinzipien.</li>
+<li><strong>Besonderheiten</strong>: Verwendet in Unternehmensservern, wissenschaftlichen Anwendungen und bei kritischen Systemen, die hohe Stabilität erfordern. <strong>Solaris</strong> und <strong>AIX</strong> sind bekannte Unix-Derivate.</li>
+</ul>
+</section>
+<section id="freebsd" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="freebsd"><span class="header-section-number">2.6.3</span> FreeBSD</h3>
+<ul>
+<li><strong>Plattform</strong>: Server, Desktops, eingebettete Systeme.</li>
+<li><strong>Eigenschaften</strong>: FreeBSD ist ein Unix-ähnliches Betriebssystem, das für seine hohe Stabilität und Netzwerkleistung bekannt ist. Es wird oft auf Servern und in sicherheitskritischen Bereichen verwendet.</li>
+<li><strong>Besonderheiten</strong>: Bietet erweiterte Sicherheitsfunktionen, umfassende Netzwerkinfrastruktur und ist bei vielen Web-Hosting-Diensten beliebt.</li>
+</ul>
+</section>
+<section id="risc-os" class="level3" data-number="2.6.4">
+<h3 data-number="2.6.4" class="anchored" data-anchor-id="risc-os"><span class="header-section-number">2.6.4</span> RISC OS</h3>
+<ul>
+<li><strong>Plattform</strong>: ARM-basierte Computer (wie der Raspberry Pi).</li>
+<li><strong>Eigenschaften</strong>: RISC OS ist ein leichtgewichtiges Betriebssystem, das ursprünglich für ARM-Prozessoren entwickelt wurde. Es ist bekannt für seine schnelle Reaktionszeit und minimalistische Ressourcenanforderungen.</li>
+<li><strong>Besonderheiten</strong>: Nischen-OS, hauptsächlich auf ARM-Architektur ausgelegt, wird z.B. auf Raspberry Pi verwendet.</li>
+</ul>
+</section>
+<section id="reactos" class="level3" data-number="2.6.5">
+<h3 data-number="2.6.5" class="anchored" data-anchor-id="reactos"><span class="header-section-number">2.6.5</span> ReactOS</h3>
+<ul>
+<li><strong>Plattform</strong>: Desktop-Computer.</li>
+<li><strong>Eigenschaften</strong>: ReactOS ist ein Open-Source-Betriebssystem, das versucht, Windows-Programme und -Treiber vollständig kompatibel zu unterstützen. Es ist ein freier Nachbau von Windows.</li>
+<li><strong>Besonderheiten</strong>: Kompatibilität mit Windows-Software, aber immer noch in der Entwicklung und nicht stabil für den Produktionseinsatz.</li>
+</ul>
+</section>
+<section id="zos-ibm" class="level3" data-number="2.6.6">
+<h3 data-number="2.6.6" class="anchored" data-anchor-id="zos-ibm"><span class="header-section-number">2.6.6</span> Z/OS (IBM)</h3>
+<ul>
+<li><strong>Plattform</strong>: Mainframe-Computer.</li>
+<li><strong>Eigenschaften</strong>: Z/OS ist ein Betriebssystem für IBM-Großrechner (Mainframes). Es ist für extrem hohe Transaktionsvolumen, Sicherheit und Stabilität ausgelegt, die in Unternehmen und Behörden erforderlich sind.</li>
+<li><strong>Besonderheiten</strong>: Sehr leistungsstark und sicher, unterstützt große Datenverarbeitungssysteme und ist für kritische Geschäftsanwendungen in der Finanzwelt und im Regierungsbereich im Einsatz.</li>
+</ul>
+</section>
+</section>
+<section id="echtzeitbetriebssysteme" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="echtzeitbetriebssysteme"><span class="header-section-number">2.7</span> Echtzeitbetriebssysteme</h2>
+<p><strong>Echtzeitbetriebssysteme (Real-Time Operating Systems, RTOS)</strong> unterscheiden sich von <strong>normalen Betriebssystemen (General-Purpose Operating Systems, GP-OS)</strong> hauptsächlich durch ihre Fähigkeit, zeitkritische Aufgaben innerhalb strikter Zeitgrenzen auszuführen. Hier sind die wesentlichen Unterschiede:</p>
+<section id="zeitliche-anforderungen" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="zeitliche-anforderungen"><span class="header-section-number">2.7.1</span> Zeitliche Anforderungen</h3>
+<ul>
+<li><strong>RTOS</strong>: Ein Echtzeitbetriebssystem ist darauf ausgelegt, <strong>deterministische</strong> (vorhersehbare) Reaktionen auf Ereignisse in einem festgelegten Zeitraum zu gewährleisten. Das bedeutet, dass Aufgaben in <strong>einer festgelegten maximalen Zeit</strong> erledigt werden müssen, unabhängig von der Systemauslastung. Es gibt zwei Haupttypen:
+<ul>
+<li><strong>Hard Real-Time Systems</strong>: Muss strenge Fristen einhalten. Ein Überschreiten dieser Fristen kann katastrophale Folgen haben (z.B. in der Raumfahrt oder Medizintechnik).</li>
+<li><strong>Soft Real-Time Systems</strong>: Fristen sind wichtig, aber es gibt gewisse Toleranzen bei der Einhaltung (z.B. Multimedia-Streaming).</li>
+</ul></li>
+<li><strong>GP-OS</strong>: Normale Betriebssysteme wie Windows, Linux oder macOS bieten <strong>keine garantierte zeitliche Reaktionsfähigkeit</strong>. Ihre Aufgabenplanung ist oft nach dem Prinzip “best-effort” gestaltet, was bedeutet, dass Aufgaben ausgeführt werden, wenn Ressourcen verfügbar sind, ohne feste Zeitvorgaben einzuhalten.</li>
+</ul>
+</section>
+<section id="task-scheduling-aufgabenplanung" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="task-scheduling-aufgabenplanung"><span class="header-section-number">2.7.2</span> Task Scheduling (Aufgabenplanung)</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Verwendet in der Regel einen <strong>präemptiven Scheduling-Algorithmus</strong> mit Prioritäten, um sicherzustellen, dass die wichtigsten zeitkritischen Aufgaben immer Vorrang haben. Ein RTOS unterbricht laufende Prozesse (Preemption), um sicherzustellen, dass zeitkritische Aufgaben rechtzeitig verarbeitet werden.</p></li>
+<li><p><strong>GP-OS</strong>: Normale Betriebssysteme verwenden oft komplexere und dynamischere <strong>Multitasking-Algorithmen</strong>, die Prozesse nach verschiedenen Kriterien wie Prozessorauslastung, Fairness oder Interaktivität planen. Sie garantieren jedoch <strong>keine festen Reaktionszeiten</strong>.</p></li>
+</ul>
+</section>
+<section id="determinismus" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="determinismus"><span class="header-section-number">2.7.3</span> Determinismus</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Echtzeitbetriebssysteme müssen <strong>deterministisch</strong> sein, d.h. die Ausführungszeiten von Prozessen sind vorhersehbar und konstant. Selbst bei hoher Last bleibt die Reaktionszeit innerhalb festgelegter Grenzen.</p></li>
+<li><p><strong>GP-OS</strong>: In einem normalen Betriebssystem ist die Ausführungszeit von Aufgaben nicht immer vorhersehbar, da die Systemauslastung, Hintergrundprozesse und andere Faktoren die Ausführung beeinflussen können. Es gibt <strong>keine Garantie</strong>, dass eine Aufgabe immer zur gleichen Zeit ausgeführt wird.</p></li>
+</ul>
+</section>
+<section id="unterbrechungshandling-interrupt-handling" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="unterbrechungshandling-interrupt-handling"><span class="header-section-number">2.7.4</span> Unterbrechungshandling (Interrupt Handling)</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Die Bearbeitung von <strong>Interrupts</strong> (z.B. Signale von Hardwarekomponenten) erfolgt <strong>extrem schnell</strong> und mit niedriger Latenz. Es gibt Mechanismen, die sicherstellen, dass ein Interrupt sofort bearbeitet wird und dass die zugehörige Aufgabe die erforderlichen Ressourcen bekommt.</p></li>
+<li><p><strong>GP-OS</strong>: Normale Betriebssysteme behandeln Interrupts ebenfalls, jedoch mit weniger strikten Zeitvorgaben. Je nach Systemlast oder Priorität kann es zu Verzögerungen kommen.</p></li>
+</ul>
+</section>
+<section id="speichermanagement" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="speichermanagement"><span class="header-section-number">2.7.5</span> Speichermanagement</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Echtzeitbetriebssysteme setzen auf <strong>statisches Speichermanagement</strong>, um unvorhersehbare Verzögerungen durch dynamische Speicherverwaltung (wie Swapping oder Paging) zu vermeiden. Dies trägt dazu bei, dass Echtzeit-Tasks keinen unerwarteten Verzögerungen ausgesetzt sind.</p></li>
+<li><p><strong>GP-OS</strong>: Normale Betriebssysteme verwenden oft <strong>dynamisches Speichermanagement</strong>, das Speicher nach Bedarf zuweist und freigibt. Dies kann jedoch zu Verzögerungen führen, da Aufgaben warten müssen, bis Speicher verfügbar ist.</p></li>
+</ul>
+</section>
+<section id="prioritätensteuerung" class="level3" data-number="2.7.6">
+<h3 data-number="2.7.6" class="anchored" data-anchor-id="prioritätensteuerung"><span class="header-section-number">2.7.6</span> Prioritätensteuerung</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Aufgaben in einem RTOS haben meist <strong>feste Prioritäten</strong>, und das Betriebssystem garantiert, dass die Aufgaben mit den höchsten Prioritäten immer vor den Aufgaben mit niedrigeren Prioritäten ausgeführt werden.</p></li>
+<li><p><strong>GP-OS</strong>: In einem normalen Betriebssystem werden Prioritäten zwar auch berücksichtigt, aber die Aufgabenplanung berücksichtigt viele andere Faktoren, z.B. die Auslastung des Systems oder die “Fairness” zwischen verschiedenen Prozessen.</p></li>
+</ul>
+</section>
+<section id="anwendungsbereiche" class="level3" data-number="2.7.7">
+<h3 data-number="2.7.7" class="anchored" data-anchor-id="anwendungsbereiche"><span class="header-section-number">2.7.7</span> Anwendungsbereiche</h3>
+<ul>
+<li><strong>RTOS</strong>: Echtzeitbetriebssysteme werden oft in <strong>eingebetteten Systemen</strong> und in Anwendungen verwendet, bei denen genaue zeitliche Steuerung erforderlich ist. Typische Beispiele:
+<ul>
+<li>Automobilindustrie (z.B. Airbags, Bremssysteme)</li>
+<li>Medizintechnik (z.B. Herzschrittmacher, Beatmungsgeräte)</li>
+<li>Raumfahrt und Luftfahrt (z.B. Flugsteuerungssysteme)</li>
+<li>Industrielle Steuerungen und Automatisierung (z.B. Robotersteuerung, Produktionsmaschinen)</li>
+</ul></li>
+<li><strong>GP-OS</strong>: Normale Betriebssysteme sind für den <strong>Alltagseinsatz</strong> konzipiert, in dem die Anforderungen an die zeitliche Steuerung weniger streng sind. Beispiele:
+<ul>
+<li>Desktops und Laptops</li>
+<li>Server</li>
+<li>Mobilgeräte</li>
+<li>Unterhaltungselektronik (z.B. Smart-TVs, Konsolen)</li>
+</ul></li>
+</ul>
+</section>
+<section id="fehlertoleranz-und-zuverlässigkeit" class="level3" data-number="2.7.8">
+<h3 data-number="2.7.8" class="anchored" data-anchor-id="fehlertoleranz-und-zuverlässigkeit"><span class="header-section-number">2.7.8</span> Fehlertoleranz und Zuverlässigkeit</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Echtzeitbetriebssysteme müssen oft hohe <strong>Zuverlässigkeit und Fehlertoleranz</strong> bieten. In sicherheitskritischen Anwendungen müssen sie bei Fehlern robust reagieren und dürfen nicht abstürzen. Es gibt häufig Mechanismen, die Fehler in Echtzeit beheben können oder das System in einen sicheren Zustand versetzen.</p></li>
+<li><p><strong>GP-OS</strong>: Normale Betriebssysteme sind ebenfalls stabil, aber sie sind weniger strikt bei der Handhabung von Fehlern. Ein Fehler oder Absturz kann zu Verzögerungen führen oder das System neu starten, ohne dass dies katastrophale Auswirkungen hat.</p></li>
+</ul>
+</section>
+<section id="minimalismus-und-modularität" class="level3" data-number="2.7.9">
+<h3 data-number="2.7.9" class="anchored" data-anchor-id="minimalismus-und-modularität"><span class="header-section-number">2.7.9</span> Minimalismus und Modularität</h3>
+<ul>
+<li><p><strong>RTOS</strong>: Echtzeitbetriebssysteme sind oft <strong>minimalistisch</strong> und speziell für bestimmte Anwendungen optimiert. Sie sind modular aufgebaut, um nur die notwendigen Funktionen bereitzustellen, damit die Leistung maximiert wird und Verzögerungen vermieden werden.</p></li>
+<li><p><strong>GP-OS</strong>: Normale Betriebssysteme sind in der Regel umfangreicher und bieten eine Vielzahl von Funktionen für allgemeine Anwendungen. Sie unterstützen eine breite Palette von Hardware und Software, was die Komplexität und den Ressourcenbedarf erhöht.</p></li>
+</ul>
+</section>
+<section id="beispiele-für-echtzeitbetriebssysteme" class="level3" data-number="2.7.10">
+<h3 data-number="2.7.10" class="anchored" data-anchor-id="beispiele-für-echtzeitbetriebssysteme"><span class="header-section-number">2.7.10</span> Beispiele für Echtzeitbetriebssysteme</h3>
+<ul>
+<li><strong>VxWorks</strong>: Häufig in der Raumfahrt, Automobilindustrie und Medizintechnik eingesetzt.</li>
+<li><strong>QNX</strong>: Verwendet in eingebetteten Systemen, besonders in der Automobilindustrie und industriellen Steuerungen.</li>
+<li><strong>RTLinux</strong>: Eine Echtzeit-Erweiterung für Linux, die deterministische Echtzeitfähigkeiten ermöglicht.</li>
+<li><strong>FreeRTOS</strong>: Ein Open-Source-RTOS, das in Mikrocontrollern und kleinen eingebetteten Systemen weit verbreitet ist.</li>
+<li><strong>OSE</strong>: Oft in der Telekommunikationsindustrie verwendet, bietet hohe Zuverlässigkeit und Echtzeitfähigkeiten.</li>
+</ul>
+</section>
+<section id="zusammenfassung-1" class="level3" data-number="2.7.11">
+<h3 data-number="2.7.11" class="anchored" data-anchor-id="zusammenfassung-1"><span class="header-section-number">2.7.11</span> Zusammenfassung</h3>
+<p>Ein <strong>Echtzeitbetriebssystem (RTOS)</strong> ist speziell für zeitkritische Anwendungen ausgelegt, bei denen es auf präzise und garantierte Reaktionszeiten ankommt. Es bietet eine deterministische Aufgabenplanung und niedrige Latenz bei der Verarbeitung von Ereignissen. Ein <strong>normales Betriebssystem (GP-OS)</strong> hingegen konzentriert sich auf Benutzerfreundlichkeit und die Verwaltung von vielfältigen Aufgaben, ohne garantierte zeitliche Reaktionsanforderungen. RTOS werden in sicherheits- und zeitkritischen Bereichen wie der Automobilindustrie, Luft- und Raumfahrt oder der Medizintechnik eingesetzt, während GP-OS für allgemeine Zwecke auf Desktops, Mobilgeräten und Servern verwendet werden.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../inhalte.html" class="pagination-link" aria-label="Übersicht">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Übersicht</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
